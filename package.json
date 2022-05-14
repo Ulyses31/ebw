@@ -1,0 +1,21 @@
+{
+  "name": "ebw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {    
+    "@types/cheerio": "^0.22.31",
+    "@types/express": "^4.17.13",
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.18.1",
+    "typescript": "^4.6.4"
+  },
+  "type": "module"
+}
