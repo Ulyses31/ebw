@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {    
+  "dependencies": {
+    "@typegoose/typegoose": "^9.8.1",
     "@types/cheerio": "^0.22.31",
     "@types/express": "^4.17.13",
     "axios": "^0.27.2",

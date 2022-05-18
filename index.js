@@ -10,6 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import express from "express";
 import axios from "axios";
 import cheerio from "cheerio";
+import Mongoose from "mongoose";
+import TagModel from "./models/tag.js";
 const url_base = "https://www.ebooksworld.ir";
 const app = express();
 function getTags() {
@@ -48,6 +50,14 @@ function extraerIdTag(url) {
 }
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const m = yield getTags();
+    try {
+        yield TagModel.insertMany(m);
+    }
+    catch (error) {
+        console.log("ERROR ", error);
+    }
     return res.status(200).json({ msg: m.map(x => { return x.idEbw; }) });
 }));
-app.listen(5500, () => { console.log("Chuscando 5500"); });
+Mongoose.connect("mongodb://localhost:2717/ebw").then(() => {
+    app.listen(5500, () => { console.log("Chuscando 5500"); });
+});
