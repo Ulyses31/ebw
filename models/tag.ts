@@ -1,7 +1,7 @@
 import pkg from '@typegoose/typegoose';
 const { getModelForClass, prop } = pkg;
 
-class Tag {
+export class Tag {
     @prop()
     public name!: string;
 
